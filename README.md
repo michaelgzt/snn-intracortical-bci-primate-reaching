@@ -3,8 +3,7 @@
 This codebase implements a 3-layer Spiking Neural Network (SNN) for predicting finger velocity from neural spike data, based on the approach described in:
 
 > **"Benchmarking spiking neural network learning methods with varying locality"**
-> Paul Hueber et al., Neuromorphic Computing and Engineering, 2024
-> [https://iopscience.iop.org/article/10.1088/2634-4386/ad4411/meta](Benchmarking of hardware-efficient real-time neural decoding in brain–computer interfaces)
+> Paul Hueber et al., Benchmarking of hardware-efficient real-time neural decoding in brain–computer interfaces, Neuromorphic Computing and Engineering, 2024, https://iopscience.iop.org/article/10.1088/2634-4386/ad4411/meta
 
 ## Key Differences from the Paper
 
