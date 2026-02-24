@@ -141,12 +141,12 @@ Evaluate a trained model:
 
 ```bash
 # Evaluate on the same session used for training
-python evaluate.py --model best_model_indy_20160622_01.pt \
+python evaluate.py --model best_model_indy_20160622_01_42.pt \
     --data-dir ./data \
     --filename indy_20160622_01.mat
 
 # Evaluate with specific model parameters (must match training)
-python evaluate.py --model best_model_indy_20160630_01.pt \
+python evaluate.py --model best_model_indy_20160630_01_42.pt \
     --data-dir ./data \
     --filename indy_20160630_01.mat \
     --hidden-size 50 \

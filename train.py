@@ -10,15 +10,15 @@ import torch
 import torch.nn as nn
 from torch.utils.data import DataLoader
 
-from .config import SNNConfig
-from .dataset import load_primate_reaching_data, PrimateReachingDataset
-from .model import SNN3
-from .loss import temporal_weighted_mse
-from .metrics import (
+from config import SNNConfig
+from dataset import load_primate_reaching_data, PrimateReachingDataset
+from model import SNN3
+from loss import temporal_weighted_mse
+from metrics import (
     compute_footprint,
     compute_connection_sparsity,
 )
-from .test import benchmark_model
+from test import benchmark_model
 
 
 def get_device() -> torch.device:
@@ -266,7 +266,7 @@ def train(
     best_epoch = -1  # -1 indicates initial state (before training)
     # Include data session in model filename (e.g., "best_model_indy_20160622_01.pt")
     session_name = config.filename.replace(".mat", "")
-    save_path = os.path.join(save_dir or ".", f"best_model_{session_name}.pt")
+    save_path = os.path.join(save_dir or ".", f"best_model_{session_name}_{config.seed}.pt")
 
     # Save initial checkpoint (in case training doesn't improve)
     save_checkpoint(model, -1, initial_test_metrics, save_path)

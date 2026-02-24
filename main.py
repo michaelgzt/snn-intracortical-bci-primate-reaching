@@ -12,10 +12,10 @@ import sys
 
 # Handle both direct execution and module execution
 if __name__ == "__main__" and __package__ is None:
-    # Running as script - add parent directory to path
-    sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-    from refactored_snn_training_testing.config import SNNConfig
-    from refactored_snn_training_testing.train import train
+    # Running as script - add current directory to path
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    from config import SNNConfig
+    from train import train
 else:
     # Running as module
     from .config import SNNConfig

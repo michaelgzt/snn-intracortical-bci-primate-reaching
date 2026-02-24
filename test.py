@@ -8,10 +8,10 @@ import torch
 import torch.nn as nn
 from torch.utils.data import DataLoader
 
-from .config import SNNConfig
-from .dataset import load_primate_reaching_data, PrimateReachingDataset
-from .model import SNN3
-from .metrics import (
+from config import SNNConfig
+from dataset import load_primate_reaching_data, PrimateReachingDataset
+from model import SNN3
+from metrics import (
     compute_footprint,
     compute_connection_sparsity,
     compute_r2,
@@ -19,40 +19,6 @@ from .metrics import (
     compute_activation_sparsity,
     compute_synaptic_operations,
 )
-
-
-def run_inference(
-    model: nn.Module,
-    test_loader: DataLoader,
-    device: torch.device,
-) -> tuple:
-    """
-    Run inference on test set.
-
-    Returns:
-        predictions: All predictions (N, 2)
-        labels: All labels (N, 2)
-    """
-    model.eval()
-    all_predictions = []
-    all_labels = []
-
-    with torch.no_grad():
-        for x, y in test_loader:
-            x = x.to(device)
-            y = y.to(device)
-
-            predictions = model(x)
-
-            # Take last timestep
-            pred_last = predictions[:, :, -1]
-            y_last = y[:, :, -1]
-
-            all_predictions.append(pred_last.cpu())
-            all_labels.append(y_last.cpu())
-
-    return torch.cat(all_predictions), torch.cat(all_labels)
-
 
 def run_inference_with_captures(
     model: nn.Module,

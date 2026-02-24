@@ -12,7 +12,7 @@ import torch
 from torch.utils.data import Dataset
 from scipy.signal import convolve2d
 
-from .download import ensure_dataset
+from download import ensure_dataset
 
 # Sampling rate of spike data (4ms interval)
 SAMPLING_RATE = 4e-3

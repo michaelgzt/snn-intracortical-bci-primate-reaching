@@ -209,9 +209,12 @@ def main():
 
     # Available trained models
     model_files = {
-        "indy_20160622_01": "best_model_indy_20160622_01.pt",
-        "indy_20160630_01": "best_model_indy_20160630_01.pt",
-        "indy_20170131_02": "best_model_indy_20170131_02.pt",
+        "indy_20160622_01": "best_model_indy_20160622_01_42.pt",
+        "indy_20160630_01": "best_model_indy_20160630_01_42.pt",
+        "indy_20170131_02": "best_model_indy_20170131_02_42.pt",
+        "loco_20170301_05": "best_model_loco_20170301_05_42.pt",
+        "loco_20170215_02": "best_model_loco_20170215_02_42.pt",
+        "loco_20170210_03": "best_model_loco_20170210_03_42.pt",
     }
 
     device = torch.device("cpu")
