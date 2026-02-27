@@ -75,31 +75,25 @@ The dataset contains recordings from two non-human primates (NHP):
 
 ### 1. Environment Setup
 
-This project uses the same environment as [NeuroBench](https://github.com/NeuroBench/neurobench). Follow the development setup using [poetry](https://python-poetry.org/):
+This project uses [uv](https://docs.astral.sh/uv/) for dependency management. Please refer to the [uv installation guide](https://docs.astral.sh/uv/getting-started/installation/) to install uv first.
 
 ```bash
-# Clone NeuroBench repository
-git clone https://github.com/NeuroBench/neurobench.git
-cd neurobench
+# Clone and set up
+git clone https://github.com/guangzhi-qu/snn-intracortical-bci-primate-reaching.git
+cd snn-intracortical-bci-primate-reaching
 
-# Install poetry using pipx (recommended for newer Ubuntu)
-sudo apt install pipx
-pipx install poetry
-
-# Install dependencies
-poetry install
+# Create virtual environment and install dependencies
+uv sync
 ```
 
-Poetry requires Python >= 3.9. Installation should not take more than a few minutes.
-
-Run commands from the poetry environment:
+Run commands from the uv environment:
 
 ```bash
-# Using poetry run
-poetry run python main.py --data-dir ./data --download
+# Using uv run
+uv run python main.py --data-dir ./data --download
 
-# Or activate the poetry shell first
-poetry shell
+# Or activate the virtual environment first
+source .venv/bin/activate
 python main.py --data-dir ./data --download
 ```
 
